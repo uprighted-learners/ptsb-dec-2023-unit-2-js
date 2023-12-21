@@ -37,7 +37,6 @@ console.log("Hello World") // inline comment
     * shortcuts:
         * cmd/ctrl + / for single lines
         * optn/alt + shift + a for multi lines
-        * 
 
     ? CONSOLE OBJECT
     * gives us access to the interpreter's console
@@ -94,6 +93,13 @@ console.log('use a dot to access attributes'.length);
 console.log('strings are indexed, starting from 0'[3]);
 console.log('index refers to the position of each element in order'[52]);
 
+// STRING LITERAL VS INTERPOLATED STRING
+
+console.log("a string literal is the string exactly as written");
+console.log(`template strings can be literal`);
+console.log(`it stops being a string literal` + ' when you operate on it'); // concatenated
+console.log(`or when you operate ${'in' + 'side'} it`); // interpolated
+
 
 
 // NUMBERS
@@ -107,17 +113,35 @@ console.log(23 % 3); // modulo operator finds remainder
 console.log(22 / 0);
 console.log(Infinity * 3);
 console.log(22 ** 3);
+console.log(Math.sqrt(-1)); //NaN (imaginary numbers are not built in)
+console.log(Number.MAX_SAFE_INTEGER);
 
 // TYPE COERCION
 
-// explicit coercion: changing the type on purpose
+// explicit coercion: changing the type on purpose using the "type constructor"
 console.log(typeof Number("22"));
 console.log(typeof String(22));
+console.log(Number()); // 0 by default
 console.log(typeof "22"); // typeof just tells you the type of something
 
 // implicit coercion: changing the type as a side affect
-console.log(2 + "2");
+console.log(2 + "2"); // 22
+console.log(2 * "2"); // 4
 console.log("2" + 2999208902348243);
 
 // not everything can be coerced
 console.log(undefined + 2); // NaN (Not a Number)
+
+
+/* 
+    ? UNDEFINED AND NULL
+    * null: a space for a value exists, but no value exists
+    * undefined: there is no concept of a value existing here
+*/
+
+
+let xyz
+console.log(xyz); // undefined
+
+xyz = null
+console.log(xyz); // null
