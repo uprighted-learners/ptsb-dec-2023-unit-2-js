@@ -154,3 +154,21 @@ if (x == true) {
 } else {
     console.log('ORRRRRRR this one will happen');
 }
+
+
+// you can use a single value as a boolean expression
+
+if (x) {
+    console.log("this is not true yet");
+}
+
+// don't do actions inside the boolean expression of an if statement
+if (console.log('dont do this')) {
+    console.log("????");
+}
+
+xyz = 3
+if (xyz++) {
+    console.log("do you know the value of xyz right now?");
+}
+console.log(xyz);
