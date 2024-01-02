@@ -66,4 +66,3 @@ age-- // decrement operator (age = age - 1)
 console.log(age); // 38
 age += 3 // "plus equals" (age = age + 3)
 console.log(age); // 41
-
