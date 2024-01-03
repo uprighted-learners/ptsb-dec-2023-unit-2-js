@@ -32,7 +32,7 @@ function hello() {
     console.log("hello");
 }
 
-// hello()
+hello()
 
 
 /* 
@@ -62,13 +62,13 @@ const hi = function () {
     console.log("hi");
 }
 
-// hi()
+hi()
 
 const hey = () => {
     console.log("hey");
 }
 
-// hey()
+hey()
 
 
 /* 
@@ -84,24 +84,20 @@ const hello_person = (person) => {
     console.log(`Hello ${person}`);
 }
 
-// hello_person('Mary')
-// hello_person('Abinav')
-// hello_person('Olivia, John, and Frans')
-// hello_person(123)
-// hello_person('Jose', 123) // it ignores the extra variable
+hello_person('Mary')
+hello_person('Olivia, John, and Frans')
+hello_person(123) // it will coerce (implicitly cast) any type it can
+hello_person('Jose', 123) // it ignores the extra variable
 
 
 const addition = (num1, num2) => {
-    // console.log(num1);
-    // console.log(num2);
     console.log(num1 + num2);
-    // return num1 + num2
     console.log("this log happens every time addition() runs");
 }
 
-// addition(3, 4)
-// addition(234, 1, 100000) // only the first two are used
-// addition(2) // missing variables are undefined
+addition(3, 4)
+addition(234, 1, 100000) // only the first two are used
+addition(2) // missing variables are undefined
 
 
 /* 
@@ -188,6 +184,8 @@ console.log(add(5, 6));
 const double = x => x * 2
 console.log(double(4));
 
+console.log(double(15) ** 2) // remember, it's a number and you can do number stuff to it! 
+
 
 /* 
     ? PRACTICE
@@ -197,3 +195,22 @@ console.log(double(4));
         - percentage that you want to tip
     return the amount of the tip
 */
+
+
+const tipCalc = (bill, tipRate) => {
+    const percentage = tipRate / 100
+    const tipAmount = bill * percentage
+    return Math.ceil(tipAmount) // rounds up to nearest whole number
+    // return [bill, tipAmount, Math.ceil(bill + tipAmount)] // to return multiple values, return an array
+}
+
+console.log(tipCalc(130, 18))
+console.log(tipCalc(17, 15))
+
+
+// concise version
+const tipCalc2 = (bill, tipRate) => tipRate / 100 * bill
+
+// this concise version works, 
+// but it's over the threshold of how much complexity I would personally do on one line
+const tipCalc3 = (bill, tipRate) => [bill, tipRate / 100 * bill, bill + tipRate / 100 * bill]
