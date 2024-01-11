@@ -56,7 +56,7 @@ worstInstruments[worstInstruments.length - 3] = "saxophone"
 const saxophone = worstInstruments[7]
 console.log(saxophone);
 
-console.log(worstInstruments.length);
+// console.log(worstInstruments.length);
 
 
 // ? Nesting Arrays
@@ -77,24 +77,42 @@ const manyDataTypes = [
     ["these", "can", ["have", "anything in them"]],
 ]
 
-manyDataTypes[3] = "defined"
+// manyDataTypes[3] = "defined"
 
-// traversing a nested array
-console.log(manyDataTypes);
-console.log(manyDataTypes[11]);
-console.log(manyDataTypes[11][2]);
-console.log(manyDataTypes[11][2][0]);
+// // traversing a nested array
+// console.log(manyDataTypes);
+// console.log(manyDataTypes[11]);
+// console.log(manyDataTypes[11][2]);
+// console.log(manyDataTypes[11][2][0]);
 
-const have = manyDataTypes[11][2][0]
+// const have = manyDataTypes[11][2][0]
 
-console.log(typeof have); // string
-console.log(typeof manyDataTypes); // object
+// console.log(typeof have); // string
+// console.log(typeof manyDataTypes); // object
 
-console.log(manyDataTypes[11][2] instanceof Array); // true (instanceof returns a boolean)
+// console.log(manyDataTypes[11][2] instanceof Array); // true (instanceof returns a boolean)
 
-// typeof only works for primitive types, instanceof only works (reliably) for reference types
-// const s = "a string"
-const s = new String('a string')
-console.log(s instanceof String); // true
-console.log(s instanceof Number); // false
+// // typeof only works for primitive types, instanceof only works (reliably) for reference types
+// // const s = "a string"
+// const s = new String('a string')
+// console.log(s instanceof String); // true
+// console.log(s instanceof Number); // false
 
+
+
+/* 
+! Looping Over Arrays 
+*/
+
+newNumArrray = [10, 20, 30, 40, 50]
+
+// ? for..of 
+// for (element of array) { do stuff }
+for (index of newNumArrray) {
+    console.log(index * 3);
+}
+
+// ? .forEach()
+// takes a callback that runs once on each element
+
+newNumArrray.forEach(element => console.log(element * 5));
